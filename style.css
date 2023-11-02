@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Poppins:ital,wght@0,400;0,900;1,400;1,900&family=Roboto:wght@100;400;900&display=swap");
+:root {
+  --left-bg-color: rgba(94, 99, 182, 0.5);
+  --right-bg-color: rgba(163, 147, 235, 0.5);
+}
 
 * {
   box-sizing: border-box;
@@ -8,12 +12,47 @@ body {
   font-family: "Roboto" sans-serif;
   margin: 0;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.picture {
-  border: 1px solid #000;
+.container {
+  background-color: #f5c7f7;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+
+.split.left {
+  left: 0;
+  background: url(running.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right {
+  right: 0;
+  background-image: url(strength.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.split.right::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
 }
