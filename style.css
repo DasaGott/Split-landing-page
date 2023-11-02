@@ -3,6 +3,7 @@
   --left-bg-color: rgba(94, 99, 182, 0.5);
   --right-bg-color: rgba(163, 147, 235, 0.5);
   --hover-width: 75%;
+  --other-width: 25%;
 }
 
 * {
@@ -85,4 +86,27 @@ button {
 
 button:hover {
   opacity: 0.6;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  transition: all 300ms ease-in-out;
 }
